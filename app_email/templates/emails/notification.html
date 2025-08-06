@@ -1,0 +1,80 @@
+<!-- templates/emails/notification.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .container {
+        max-width: 600px;
+        font-family: Arial, sans-serif;
+        text-align: left;
+      }
+      .logo {
+        max-width: 200px;
+        margin-bottom: 20px;
+      }
+      .details {
+        background: #f5f5f5;
+        padding: 15px;
+        border-radius: 5px;
+        margin: 20px 0;
+      }
+      .signature {
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid #eee;
+      }
+      .signature p {
+        margin: 5px 0; /* Reduces vertical spacing between paragraphs in signature */
+      }
+
+      .action {
+        margin: 10px 0;
+      }
+      .action h2 {
+        margin: 0 0 5px 0;
+      }
+      .action p {
+        margin: 0;
+      }
+
+      .action-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #ffffff !important;
+        text-decoration: none;
+        border-radius: 5px;
+        margin: 20px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p>Hello,</p>
+
+      <p>
+        This email is to inform you of the following activity on the Platform:
+      </p>
+
+      <div class="action">
+        <h2>{{ action }}</h2>
+        <p>By: {{ actor }}</p>
+      </div>
+
+      {% if details %}
+      <h3>Details:</h3>
+      {% for key, value in details.items %}
+      <p><strong>{{ key|title }}:</strong> {{ value }}</p>
+      {% endfor %} {% endif %} {% if url %}
+      <a href="{{ base_url }}{{ url }}" class="action-button">View Details</a>
+      {% endif %}
+
+      <br />
+      <div class="signature">
+        <p>Best regards,</p>
+        <p>{{ company_name }}</p>
+        <p>Email: {{ company_email }}</p>
+      </div>
+    </div>
+  </body>
+</html>

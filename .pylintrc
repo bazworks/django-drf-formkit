@@ -1,0 +1,23 @@
+[MASTER]
+# Add the apps directory to the Python path
+init-hook='import sys; sys.path.append("."); sys.path.append("apps")'
+
+# Load Django plugin
+load-plugins=pylint_django
+
+[DJANGO_SETTINGS_MODULE]
+django-settings-module=project.settings
+
+[MESSAGES CONTROL]
+# Disable specific warnings that are common in Django projects
+disable=C0111,C0103,R0903,W0621,C0301,W0613,W0612,W0611,W0718,R0913,R0917,R0901
+
+[FORMAT]
+# Maximum number of characters on a single line
+max-line-length=120
+
+# Maximum number of lines in a module
+max-module-lines=2000
+
+# String used as indentation unit
+indent-string='    '
