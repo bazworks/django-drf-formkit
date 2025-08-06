@@ -1,0 +1,29 @@
+{
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/apps"
+    ],
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.diagnosticMode": "workspace",
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportGeneralTypeIssues": "none",
+        "reportOptionalMemberAccess": "none"
+    },
+    "files.associations": {
+        "**/*.py": "python",
+        "**/templates/**/*.html": "django-html",
+        "**/templates/**/*.txt": "django-txt",
+        "**/requirements{/**,*}.{txt,in}": "pip-requirements",
+        "**/*.sh": "shellscript"
+    },
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "[django-html]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "batisteo.vscode-django"
+    },
+    "files.trimTrailingWhitespace": true
+
+}
